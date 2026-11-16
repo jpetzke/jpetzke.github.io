@@ -1,177 +1,120 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-    <title>Jonas Petzke</title>
-    <meta name="description" content="Developer, Chess Player, Software Challenge Winner">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Preconnect to Google Fonts for faster loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Optimized Google Fonts - reduced weights for faster loading -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Cormorant:wght@400;500&display=swap" rel="stylesheet">
-
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/fontAwesome.css">
-    <link rel="stylesheet" href="css/tooplate-style.css">
-
-    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jonas Petzke</title>
+  <meta name="description" content="Jonas Petzke: AI automation engineer at BLAID, business informatics student at Universität Leipzig and Universidad de Granada.">
+  <link rel="canonical" href="https://jpetzke.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jonas Petzke">
+  <meta property="og:description" content="AI automation engineer at BLAID. Business informatics at Universität Leipzig and Universidad de Granada.">
+  <meta property="og:url" content="https://jpetzke.github.io/">
+  <meta name="theme-color" content="#f5ce1a">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script src="clock.js" defer></script>
 </head>
-
 <body>
-
-    <!-- Hero Section -->
-    <header class="luxury-hero">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <div class="monogram">JP</div>
-                <h1 class="hero-title">Jonas Petzke</h1>
-                <div class="divider-ornament">
-                    <span class="ornament-line"></span>
-                    <span class="ornament-diamond">◆</span>
-                    <span class="ornament-line"></span>
-                </div>
-                <p class="hero-subtitle">Developer · Chess Player · Problem Solver</p>
-                <a href="quicklinks.html" class="hero-quicklinks-btn">
-                    <span>Quick Links</span>
-                    <span class="btn-arrow">→</span>
-                </a>
-            </div>
-        </div>
+  <div class="sheet">
+    <header class="band">
+      <p class="band-title">Departures</p>
+      <time class="clock" data-clock hidden></time>
     </header>
 
-    <!-- About Section -->
-    <section class="about-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <div class="section-intro">
-                        <h2 class="section-title">Expertise</h2>
-                        <p class="section-description">A passion for elegant solutions and strategic thinking</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row expertise-grid">
-                <div class="col-md-6 col-lg-3">
-                    <div class="expertise-card">
-                        <div class="card-header">
-                            <div class="icon-wrapper">
-                                <img src="img/first-icon.png" alt="Programming">
-                            </div>
-                            <h3>Programming</h3>
-                        </div>
-                        <div class="card-body">
-                            <ul class="expertise-list">
-                                <li>Python</li>
-                                <li>C# / C++</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="expertise-card">
-                        <div class="card-header">
-                            <div class="icon-wrapper">
-                                <img src="img/chess_icon.png" alt="Chess">
-                            </div>
-                            <h3>Chess</h3>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">Since 2014</p>
-                            <p class="card-link">Club: <a href="https://www.schachbund.de/verein/F1508.html" target="_blank">SGL</a></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="expertise-card">
-                        <div class="card-header">
-                            <div class="icon-wrapper">
-                                <img src="img/third-icon.png" alt="Contact">
-                            </div>
-                            <h3>Contact</h3>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-link">
-                                <a href="https://de.linkedin.com/in/jonas-petzke">LinkedIn</a>
-                            </p>
-                            <p class="card-link">
-                                <a href="https://www.instagram.com/jonas_ptzk/" target="_blank">@jonas_ptzk</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="expertise-card">
-                        <div class="card-header">
-                            <div class="icon-wrapper">
-                                <img src="img/github_icon.png" alt="GitHub">
-                            </div>
-                            <h3>GitHub</h3>
-                        </div>
-                        <div class="card-body">
-                            <p class="card-link">
-                                <a href="https://github.com/jpetzke" target="_blank">github.com/jpetzke</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <main>
+      <section class="station" aria-labelledby="name">
+        <h1 class="station-name print" id="name">Jonas Petzke</h1>
+        <p class="intro print" style="--i: 1">I build LLM backends, RAG pipelines and n8n automations at BLAID, and study business informatics.</p>
 
-    <!-- Achievement Section -->
-    <section class="achievement-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="achievement-wrapper">
-                        <div class="achievement-image">
-                            <img src="img/socha_logo.png" alt="Software Challenge Germany">
-                        </div>
-                        <div class="achievement-content">
-                            <span class="achievement-label">Award</span>
-                            <h2 class="achievement-title">Winner of the Software Challenge Germany 2022</h2>
-                            <p class="achievement-description">Awarded first place in the prestigious Software Challenge Germany 2022 finals, held in Kiel.</p>
-                            <a href="data/KielerNachichten-2022-06-21_SoftwareChallenge.pdf" target="_blank" class="luxury-button">
-                                <span>View Certificate</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <nav class="platforms print" style="--i: 2" aria-labelledby="platforms">
+          <h2 id="platforms">Platforms</h2>
+          <ul>
+            <li>
+              <a class="platform" href="mailto:jonas.petzke02@gmail.com">
+                <span class="platform-no" aria-hidden="true">1</span>
+                <span>
+                  <span class="platform-label">Mail</span>
+                  <span class="platform-detail">jonas.petzke02@gmail.com</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="platform" href="https://www.linkedin.com/in/jonas-petzke" rel="me">
+                <span class="platform-no" aria-hidden="true">2</span>
+                <span>
+                  <span class="platform-label">LinkedIn</span>
+                  <span class="platform-detail">in/jonas-petzke</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a class="platform" href="https://github.com/jpetzke" rel="me">
+                <span class="platform-no" aria-hidden="true">3</span>
+                <span>
+                  <span class="platform-label">GitHub</span>
+                  <span class="platform-detail">jpetzke</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
 
-    <!-- Footer -->
-    <footer class="luxury-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-divider">
-                    <span class="divider-line"></span>
-                    <span class="divider-symbol">◆</span>
-                    <span class="divider-line"></span>
-                </div>
-                <p class="copyright">Copyright &copy; 2026 Jonas Petzke</p>
-                <p class="footer-tagline">Excellence</p>
-            </div>
-        </div>
+      <table class="timetable">
+        <caption>Departures: what I do and have done</caption>
+        <thead>
+          <tr>
+            <th scope="col" class="col-dep">Dep.</th>
+            <th scope="col" class="col-line">Line</th>
+            <th scope="col">Destination</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="print" style="--i: 3">
+            <td><time class="dep" datetime="2025-09">09/2025</time></td>
+            <td><span class="line">Work</span></td>
+            <td>
+              <span class="dest">AI Automation Engineer, <a href="https://blaid.eu">BLAID</a></span>
+              <span class="stops"><span>LLM backends</span><span>Agentic RAG</span><span>n8n automation</span><span>Azure</span></span>
+            </td>
+          </tr>
+          <tr class="print" style="--i: 4">
+            <td><time class="dep" datetime="2024-10">10/2024</time></td>
+            <td><span class="line">Study</span></td>
+            <td>
+              <span class="dest">B.Sc. Business Informatics, Universität Leipzig</span>
+              <span class="stops"><span>Universidad de Granada</span><span>IT Associate, Finance Club Leipzig</span></span>
+            </td>
+          </tr>
+          <tr class="print" style="--i: 5">
+            <td><time class="dep" datetime="2022">2022</time></td>
+            <td><span class="line">Award</span></td>
+            <td>
+              <span class="dest">1st place, <a href="https://software-challenge.de">Software Challenge Germany</a></span>
+              <span class="stops"><span>Game-AI competition</span><span>Finals in Kiel</span></span>
+            </td>
+          </tr>
+          <tr class="print" style="--i: 6">
+            <td><time class="dep" datetime="2014">2014</time></td>
+            <td><span class="line">Chess</span></td>
+            <td>
+              <span class="dest">Tournament chess</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <footer class="notes">
+      <a class="next" href="quicklinks.html">
+        Connections: things I use
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 4l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+      </a>
+      <p>Timetable valid from November 2026. Subject to change. &copy; 2026 Jonas Petzke</p>
     </footer>
-
-    <!-- Use local jQuery for faster loading -->
-    <script src="js/vendor/jquery-1.11.2.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-
+  </div>
 </body>
-
 </html>
-

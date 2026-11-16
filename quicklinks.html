@@ -1,122 +1,65 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-    <title>Quick Links - Jonas Petzke</title>
-    <meta name="description" content="Useful quick links and resources">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Preconnect to Google Fonts for faster loading -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Optimized Google Fonts - reduced weights for faster loading -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;900&family=Cormorant:wght@400;500&display=swap" rel="stylesheet">
-
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/fontAwesome.css">
-    <link rel="stylesheet" href="css/tooplate-style.css">
-
-    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Things I use · Jonas Petzke</title>
+  <meta name="description" content="A short list of tools and resources Jonas Petzke uses.">
+  <link rel="canonical" href="https://jpetzke.github.io/quicklinks.html">
+  <meta name="theme-color" content="#f5ce1a">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script src="clock.js" defer></script>
 </head>
-
 <body>
-
-    <!-- Hero Section -->
-    <header class="quicklinks-hero">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <a href="index.html" class="back-link">← Back to Home</a>
-                <h1 class="hero-title">Quick Links</h1>
-                <div class="divider-ornament">
-                    <span class="ornament-line"></span>
-                    <span class="ornament-diamond">◆</span>
-                    <span class="ornament-line"></span>
-                </div>
-                <p class="hero-subtitle">Curated Resources & Tools</p>
-            </div>
-        </div>
+  <div class="sheet">
+    <header class="band">
+      <p class="band-title">Connections</p>
+      <time class="clock" data-clock hidden></time>
     </header>
 
-    <!-- Quick Links Section -->
-    <section class="quicklinks-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+    <main>
+      <section class="station" aria-labelledby="title">
+        <h1 class="station-name print" id="title">Things I use</h1>
+        <p class="intro print" style="--i: 1">A few links I keep coming back to.</p>
+      </section>
 
-                    <!-- Quick Link Item -->
-                    <div class="quicklink-item">
-                        <div class="quicklink-number">01</div>
-                        <div class="quicklink-content">
-                            <h3 class="quicklink-title">System Prompts</h3>
-                            <p class="quicklink-description">Leaked system prompts for the top AI models</p>
-                            <a href="https://github.com/elder-plinius/CL4R1T4S" target="_blank" class="quicklink-button">
-                                <span>Visit</span>
-                                <span class="arrow">→</span>
-                            </a>
-                        </div>
-                    </div>
+      <table class="timetable">
+        <caption>Things I use</caption>
+        <thead>
+          <tr>
+            <th scope="col" class="col-line">Line</th>
+            <th scope="col">Destination</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="print" style="--i: 2">
+            <td><span class="line">AI</span></td>
+            <td>
+              <a class="dest" href="https://github.com/elder-plinius/CL4R1T4S">CL4R1T4S</a>
+              <span class="stops"><span>Leaked system prompts of the major AI models</span></span>
+            </td>
+          </tr>
+          <tr class="print" style="--i: 3">
+            <td><span class="line">Privacy</span></td>
+            <td>
+              <a class="dest" href="https://grapheneos.org/">GrapheneOS</a>
+              <span class="stops"><span>Private, hardened Android</span></span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
 
-                    <!-- Quick Link Item -->
-                    <div class="quicklink-item">
-                        <div class="quicklink-number">02</div>
-                        <div class="quicklink-content">
-                            <h3 class="quicklink-title">GrapheneOS</h3>
-                            <p class="quicklink-description">Truely private and secure Android Operating System</p>
-                            <a href="https://grapheneos.org/" target="_blank" class="quicklink-button">
-                                <span>Visit</span>
-                                <span class="arrow">→</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Add more quick links below by copying this structure -->
-                    <!--
-                    <div class="quicklink-item">
-                        <div class="quicklink-number">03</div>
-                        <div class="quicklink-content">
-                            <h3 class="quicklink-title">Your Link Title</h3>
-                            <p class="quicklink-description">Brief description of what this link is for</p>
-                            <a href="YOUR_URL_HERE" target="_blank" class="quicklink-button">
-                                <span>Visit</span>
-                                <span class="arrow">→</span>
-                            </a>
-                        </div>
-                    </div>
-                    -->
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="luxury-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-divider">
-                    <span class="divider-line"></span>
-                    <span class="divider-symbol">◆</span>
-                    <span class="divider-line"></span>
-                </div>
-                <p class="copyright">Copyright &copy; 2026 Jonas Petzke</p>
-                <p class="footer-tagline">Excellence</p>
-            </div>
-        </div>
+    <footer class="notes">
+      <a class="next" href="./">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M17 10H4M9 4l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+        Back to departures
+      </a>
+      <p>&copy; 2026 Jonas Petzke</p>
     </footer>
-
-    <!-- Use local jQuery for faster loading -->
-    <script src="js/vendor/jquery-1.11.2.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-
+  </div>
 </body>
-
 </html>

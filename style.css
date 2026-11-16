@@ -1,0 +1,415 @@
+@font-face {
+  font-family: "Archivo";
+  src: url("fonts/archivo.woff2") format("woff2");
+  font-weight: 100 900;
+  font-stretch: 62% 125%;
+  font-display: swap;
+}
+
+:root {
+  --yellow: #f5ce1a;
+  --ink: #111111;
+  --white: #ffffff;
+  --red: #d3231b;
+
+  --gutter: clamp(16px, 4vw, 48px);
+  --rule-heavy: 6px solid var(--ink);
+  --rule: 2px solid var(--ink);
+  --hair: 1px solid var(--ink);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  color-scheme: light;
+  scrollbar-color: var(--ink) var(--yellow);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--yellow);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--yellow);
+  color: var(--ink);
+  font-family: "Archivo", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.45;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--yellow);
+}
+
+a {
+  color: inherit;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  background: var(--red);
+  color: var(--white);
+  text-decoration-color: var(--white);
+}
+
+:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 3px;
+}
+
+.sheet {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--gutter) 40px;
+}
+
+/* ---------- Top band: board title + live clock ---------- */
+
+.band {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 28px 0 12px;
+  border-bottom: var(--rule-heavy);
+}
+
+.band-title {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 850;
+  font-stretch: 125%;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.clock {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 750;
+  font-stretch: 75%;
+  line-height: 1;
+}
+
+.clock .colon {
+  color: var(--red);
+  animation: blink 2s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ---------- Station block: name, intro, platforms ---------- */
+
+.station {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+  gap: 16px 56px;
+  padding: 24px 0 28px;
+  border-bottom: var(--rule);
+  container-type: inline-size;
+}
+
+.station-name {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 20cqi;
+  font-weight: 850;
+  font-stretch: 68%;
+  letter-spacing: -0.02em;
+  line-height: 0.86;
+  text-wrap: balance;
+}
+
+.intro {
+  max-width: 34ch;
+  margin: 18px 0 0;
+  font-size: clamp(1.375rem, 2.4vw, 1.875rem);
+  font-weight: 500;
+  font-stretch: 90%;
+  line-height: 1.3;
+  text-wrap: pretty;
+}
+
+.platforms h2 {
+  margin: 4px 0 8px;
+  font-size: 0.9375rem;
+  font-weight: 750;
+  font-stretch: 100%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.platforms ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: var(--rule);
+}
+
+.platforms li {
+  border-bottom: var(--hair);
+}
+
+.platform {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  align-items: center;
+  gap: 14px;
+  min-height: 60px;
+  margin: 0 -8px;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.platform-no {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  background: var(--white);
+  border: var(--rule);
+  font-size: 1.5rem;
+  font-weight: 850;
+  font-stretch: 80%;
+  line-height: 1;
+}
+
+.platform-label {
+  display: block;
+  font-size: 1.25rem;
+  font-weight: 750;
+  font-stretch: 85%;
+  line-height: 1.1;
+}
+
+.platform-detail {
+  display: block;
+  font-size: 0.9375rem;
+  overflow-wrap: anywhere;
+}
+
+.platform:hover .platform-no {
+  color: var(--red);
+  border-color: var(--white);
+}
+
+/* ---------- Timetable ---------- */
+
+.timetable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+.timetable caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.timetable th {
+  padding: 14px 16px 10px 0;
+  border-bottom: var(--rule);
+  font-size: 0.9375rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.timetable td {
+  padding: 16px 16px 18px 0;
+  border-bottom: var(--hair);
+  vertical-align: top;
+}
+
+.timetable tr:last-child td {
+  border-bottom: var(--rule);
+}
+
+.col-dep {
+  width: 11rem;
+}
+
+.col-line {
+  width: 9rem;
+}
+
+.dep {
+  font-size: clamp(2rem, 4.2vw, 3.25rem);
+  font-weight: 850;
+  font-stretch: 70%;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  white-space: nowrap;
+}
+
+.line {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 5px 9px 4px;
+  background: var(--ink);
+  color: var(--yellow);
+  font-size: 0.875rem;
+  font-weight: 800;
+  font-stretch: 110%;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.dest {
+  display: block;
+  max-width: 30ch;
+  font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+  font-weight: 800;
+  font-stretch: 80%;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+  text-wrap: balance;
+}
+
+.stops {
+  display: block;
+  max-width: 68ch;
+  margin-top: 8px;
+  font-size: 1.0625rem;
+  font-weight: 450;
+}
+
+.stops span + span::before {
+  content: "";
+  display: inline-block;
+  width: 0.4em;
+  height: 0.4em;
+  margin: 0 0.55em 0.15em;
+  background: var(--ink);
+  vertical-align: middle;
+}
+
+/* ---------- Footnotes ---------- */
+
+.notes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 32px;
+  padding-top: 14px;
+  font-size: 0.9375rem;
+}
+
+.notes p {
+  margin: 0;
+}
+
+.next {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-weight: 750;
+  font-stretch: 90%;
+}
+
+.next svg {
+  width: 1.1em;
+  height: 1.1em;
+  flex: none;
+}
+
+/* ---------- The one orchestrated moment: rows print in ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .print {
+    animation: print 700ms var(--ease-out) backwards;
+    animation-delay: calc(120ms + var(--i, 0) * 90ms);
+  }
+
+  @keyframes print {
+    from {
+      clip-path: inset(0 100% 0 0);
+      transform: translateX(-12px);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+      transform: none;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clock .colon {
+    animation: none;
+  }
+}
+
+/* ---------- Narrow screens: the table restacks as a timetable column ---------- */
+
+@media (max-width: 760px) {
+  .band {
+    padding-top: 20px;
+  }
+
+  .station {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 24px 0 32px;
+  }
+
+  .timetable thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .timetable tr {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: baseline;
+    column-gap: 14px;
+    padding: 18px 0 20px;
+    border-bottom: var(--hair);
+  }
+
+  .timetable {
+    margin-top: 0;
+  }
+
+  .timetable tr:last-child {
+    border-bottom: var(--rule);
+  }
+
+  .timetable td,
+  .timetable tr:last-child td {
+    display: block;
+    padding: 0;
+    border: 0;
+  }
+
+  .timetable td:last-child {
+    grid-column: 1 / -1;
+    margin-top: 10px;
+  }
+
+  .line {
+    margin-top: 0;
+  }
+}
